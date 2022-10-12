@@ -21,14 +21,10 @@ function timeCheck() {
     // moment.js: 'kk' uses hours in 24 hour format
     // use 24 hour format in data-numbers
     const presentHour = moment().format('kk')
-    // var workHour = $('#hour9').val() //"meeting"
-    // console.log(presentHour)  //present time(hour) 
-    console.log(hoursEl)  
 
     for (i = 0; i < hoursEl.length; i++) {
         var time = $(hoursEl[i]).attr('data-number')
         var hello = $(hoursEl[i]).siblings('textarea')
-        console.log(hello)
         if (time < presentHour) {
             hello.addClass('hourPast')
         } else if (time === presentHour) {
@@ -37,9 +33,19 @@ function timeCheck() {
             hello.addClass('hourFuture')
         }}
     // moment('2010-10-20').isBefore('2010-10-21'); // true
-    // if (moment(time).isBefore(hoursEl)) {
-    // console.log('past-time')
-    // }
 }
 
+$('.saveBtn').on('click', (e) => {
+    var event = $(e.target)
+    var hour = event.siblings('div').attr('data-hour')
+    var text = event.siblings('textarea').val()
+    const localSave = {
+        time: hour,
+        input: text
+    }
+    localStorage.setItem('input', JSON.stringify(localSave))
+})
+
+// localStorage.setItem('Highscore', JSON.stringify(highscore))
+// var workHour = $('#hour9').val() //"meeting"
 timeCheck();
