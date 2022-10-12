@@ -57,7 +57,7 @@ textarea {
   color: white;
 }
 
-#saveBtn {
+.saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -65,7 +65,20 @@ textarea {
   color: white;
 }
 
-#saveBtn i:hover {
+.hourPast {
+  background-color: rgba(128, 128, 128, 0.667);
+}
+
+.hourPresent {
+  background-color: rgba(25, 214, 25, 0.509) ;
+}
+
+.hourFuture {
+  background-color: rgba(255, 0, 0, 0.509) ;
+}
+
+button:hover {
+  background-color: rgb(22, 214, 22);
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }

@@ -25,6 +25,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./Assets/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Work Day Scheduler</title>
   </head>
 
@@ -40,83 +42,80 @@
       <!-- 9am block -->
       <div id="time-container">
         <div class="row">
-          <div class="col-12 col-md-1 border border-start-0 border-dark" id="hour">9am</div>
-          <textarea class="col-12 col-md-10 border border-dark" id="input-content">meeting</textarea>
-          <button class="col-12 col-md-1" id="saveBtn">SAVE</button>
+          <div class="col-12 col-md-1 border border-start-0 border-dark d-flex justify-content-center align-items-center" id="hour">9am</div>
+          <textarea class="hourPast col-12 col-md-10 border border-dark p-3" id="input-content">meeting</textarea>
+          <button class="col-12 col-md-1 saveBtn">SAVE</button>
         </div>
       </div>
 
       <!-- 10am block -->
       <div id="time-container">
         <div class="row">
-          <div class="col-12 col-md-1 border border-start-0 border-dark" id="hour">10am</div>
-          <textarea class="col-12 col-md-10 border border-dark" id="input-content">meeting</textarea>
-          <button class="col-12 col-md-1" id="saveBtn">SAVE</button>
+          <div class="col-12 col-md-1 border border-start-0 border-dark d-flex justify-content-center align-items-center" id="hour">10am</div>
+          <textarea class="hourPresent col-12 col-md-10 border border-dark p-3" id="input-content">meeting</textarea>
+          <button class="col-12 col-md-1 saveBtn">SAVE</button>
         </div>
       </div>
 
       <div id="time-container">
         <div class="row">
-          <div class="col-12 col-md-1 border border-start-0 border-dark" id="hour">11am</div>
-          <textarea class="col-12 col-md-10 border border-dark" id="input-content">meeting</textarea>
-          <button class="col-12 col-md-1" id="saveBtn">SAVE</button>
+          <div class="col-12 col-md-1 border border-start-0 border-dark d-flex justify-content-center align-items-center" id="hour">11am</div>
+          <textarea class="hourFuture col-12 col-md-10 border border-dark p-3" id="input-content">meeting</textarea>
+          <button class="col-12 col-md-1 saveBtn">SAVE</button>
         </div>
       </div>
 
       <div id="time-container">
         <div class="row">
-          <div class="col-12 col-md-1 border border-start-0 border-dark" id="hour">12am</div>
-          <textarea class="col-12 col-md-10 border border-dark" id="input-content">meeting</textarea>
-          <button class="col-12 col-md-1" id="saveBtn">SAVE</button>
+          <div class="col-12 col-md-1 border border-start-0 border-dark d-flex justify-content-center align-items-center" id="hour">12am</div>
+          <textarea class="col-12 col-md-10 border border-dark p-3" id="input-content">meeting</textarea>
+          <button class="col-12 col-md-1 saveBtn">SAVE</button>
         </div>
       </div>
 
       <div id="time-container">
         <div class="row">
-          <div class="col-12 col-md-1 border border-start-0 border-dark" id="hour">1pm</div>
-          <textarea class="col-12 col-md-10 border border-dark" id="input-content">meeting</textarea>
-          <button class="col-12 col-md-1" id="saveBtn">SAVE</button>
+          <div class="col-12 col-md-1 border border-start-0 border-dark d-flex justify-content-center align-items-center" id="hour">1pm</div>
+          <textarea class="col-12 col-md-10 border border-dark p-3" id="input-content">meeting</textarea>
+          <button class="col-12 col-md-1 saveBtn">SAVE</button>
         </div>
       </div>
 
       <div id="time-container">
         <div class="row">
-          <div class="col-12 col-md-1 border border-start-0 border-dark" id="hour">2pm</div>
-          <textarea class="col-12 col-md-10 border border-dark" id="input-content">meeting</textarea>
-          <button class="col-12 col-md-1" id="saveBtn">SAVE</button>
+          <div class="col-12 col-md-1 border border-start-0 border-dark d-flex justify-content-center align-items-center" id="hour">2pm</div>
+          <textarea class="col-12 col-md-10 border border-dark p-3" id="input-content">meeting</textarea>
+          <button class="col-12 col-md-1 saveBtn">SAVE</button>
         </div>
       </div>
 
       <div id="time-container">
         <div class="row">
-          <div class="col-12 col-md-1 border border-start-0 border-dark" id="hour">3pm</div>
-          <textarea class="col-12 col-md-10 border border-dark" id="input-content">meeting</textarea>
-          <button class="col-12 col-md-1" id="saveBtn">SAVE</button>
+          <div class="col-12 col-md-1 border border-start-0 border-dark d-flex justify-content-center align-items-center" id="hour">3pm</div>
+          <textarea class="col-12 col-md-10 border border-dark p-3" id="input-content">meeting</textarea>
+          <button class="col-12 col-md-1 saveBtn">SAVE</button>
         </div>
       </div>
 
       <div id="time-container">
         <div class="row">
-          <div class="col-12 col-md-1 border border-start-0 border-dark" id="hour">4pm</div>
-          <textarea class="col-12 col-md-10 border border-dark" id="input-content">meeting</textarea>
-          <button class="col-12 col-md-1" id="saveBtn">SAVE</button>
+          <div class="col-12 col-md-1 border border-start-0 border-dark d-flex justify-content-center align-items-center" id="hour">4pm</div>
+          <textarea class="col-12 col-md-10 border border-dark p-3" id="input-content">meeting</textarea>
+          <button class="col-12 col-md-1 saveBtn">SAVE</button>
         </div>
       </div>
 
-            <div id="time-container">
+      <div id="time-container">
         <div class="row">
-          <div class="col-12 col-md-1 border border-start-0 border-dark" id="hour">5pm</div>
-          <textarea class="col-12 col-md-10 border border-dark" id="input-content">meeting</textarea>
-          <button class="col-12 col-md-1" id="saveBtn">SAVE</button>
+          <div class="col-12 col-md-1 border border-start-0 border-dark d-flex justify-content-center align-items-center" id="hour">5pm</div>
+          <textarea class="col-12 col-md-10 border border-dark p-3" id="input-content">meeting</textarea>
+          <button class="col-12 col-md-1 saveBtn">SAVE</button>
         </div>
       </div>
-
 
     </div>
 
 
     <script src="./Assets/js/script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   </body>
 </html>
