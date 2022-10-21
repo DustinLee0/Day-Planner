@@ -13,11 +13,11 @@ function timeCheck() {
         '#hour10',
         '#hour11',
         '#hour12',
-        '#hour1',
-        '#hour2',
-        '#hour3',
-        '#hour4',
-        '#hour5',
+        '#hour13',
+        '#hour14',
+        '#hour15',
+        '#hour16',
+        '#hour17',
     ]
     // moment.js: 'kk' uses hours in 24 hour format
     // use 24 hour format in data-numbers
@@ -38,28 +38,41 @@ function timeCheck() {
     
     timeCheck();
 
+    var save = []
+
 $('.saveBtn').on('click', (e) => {
     var event = $(e.target)
-    var hour = event.siblings('div').attr('data-hour')
+    var hour = event.siblings('div').attr('data-number')
     var text = event.siblings('textarea').val()
-    console.log(event)
-    console.log(hour)
-    console.log(text)
 
-    // var localSave = []
-    // const localSaveObj ={ 
-    //     time: hour,
-    //     input: text
-    //     }
+    const localSaveObj = { 
+        time: hour,
+        input: text
+        }
+    
+        save.push(localSaveObj)
 
-// localStorage.setItem('input', JSON.stringify(localSaveObj)
-// console.log(localSave)
-// console.log(localSaveObj)
-// console.log()
-// console.log()
-
-
+    localStorage.setItem('planner', JSON.stringify(save))
+    renderSave()
 })
 
-// localStorage.setItem('Highscore', JSON.stringify(highscore))
-// var workHour = $('#hour9').val() //"meeting"
+function renderSave() {
+    let localSave = JSON.parse(localStorage.getItem('planner'))
+    console.log(localSave)
+
+    for (i = 0; i < localSave.length; i++) {
+        // console.log('local save: ' + localSave[i].time)
+        // console.log('data number: '+ $(hourCheck).attr('data-number'))
+        // console.log(localSave[i].input)
+
+        let n = 9
+        let hourCheck = '#hour' + n
+        if (localSave[i].time === $(hourCheck).attr('data-number')) {
+            $(hourCheck).siblings('textarea').innerHTML = localSave[i].input
+            console.log('hello world')
+
+            n++
+        }
+
+    }
+}
