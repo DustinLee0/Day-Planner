@@ -60,19 +60,21 @@ function renderSave() {
     let localSave = JSON.parse(localStorage.getItem('planner'))
     console.log(localSave)
 
-    for (i = 0; i < localSave.length; i++) {
-        // console.log('local save: ' + localSave[i].time)
-        // console.log('data number: '+ $(hourCheck).attr('data-number'))
-        // console.log(localSave[i].input)
+    for (let n = 9; n < 18; n++) {
+        let id = '#hour' + n
+        let saveInput = $(id).siblings('#text-content')
+        let dataNumber = $(id).attr('data-number')
 
-        let n = 9
-        let hourCheck = '#hour' + n
-        if (localSave[i].time === $(hourCheck).attr('data-number')) {
-            $(hourCheck).siblings('textarea').innerHTML = localSave[i].input
-            console.log('hello world')
-
-            n++
-        }
-
+        console.log(saveInput)
+        console.log(dataNumber)
+        console.log($(id).attr('data-number'))
+        
+        for (let i = 0; i < localSave.length; i++) {
+            if(localSave[i].time === dataNumber) {
+                saveInput.text(localSave[i].input)
+                console.log('hello')
+        }}
     }
 }
+
+window.onload = renderSave()
