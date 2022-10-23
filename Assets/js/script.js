@@ -65,14 +65,9 @@ function renderSave() {
         let saveInput = $(id).siblings('#text-content')
         let dataNumber = $(id).attr('data-number')
 
-        console.log(saveInput)
-        console.log(dataNumber)
-        console.log($(id).attr('data-number'))
-        
         for (let i = 0; i < localSave.length; i++) {
             if(localSave[i].time === dataNumber) {
                 saveInput.text(localSave[i].input)
-                console.log('hello')
         }}
     }
 }
